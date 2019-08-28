@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  ldap:
+    build: .
+    container_name: ldap
+    ports:
+      - 389:389
+      - 636:636
+    environment:
+      - CA_FILE=/etc/ssl/certs/ca.pem
+      - KEY_FILE=/etc/ssl/certs/public.key
+      - CERT_FILE=/etc/ssl/certs/public.crt
+      - ORGANIZATION_NAME=example
+      - SUFFIX=dc=example,dc=jp
+      - ROOT_USER=admin
+      - ROOT_PW=adminpassword
+      - LOG_LEVEL=stats
+    volumes:
+#      - ./certs:/etc/ssl/certs
+      - ./ldif:/ldif

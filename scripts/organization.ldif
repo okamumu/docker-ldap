@@ -1,0 +1,14 @@
+dn: %SUFFIX%
+objectClass: dcObject
+objectClass: organization
+o: %ORGANISATION_NAME%
+
+dn: ou=Users,%SUFFIX%
+objectClass: organizationalUnit
+objectClass: top
+ou: Users
+
+dn: ou=Groups,%SUFFIX%
+objectClass: organizationalUnit
+objectClass: top
+ou: Users
