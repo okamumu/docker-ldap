@@ -16,6 +16,7 @@ services:
       - ROOT_USER=admin
       - ROOT_PW=adminpassword
       - LOG_LEVEL=stats
+      - LDIF_DIR=/ldif
     volumes:
 #      - ./certs:/etc/ssl/certs
       - ./ldif:/ldif
